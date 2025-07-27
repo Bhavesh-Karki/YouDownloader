@@ -64,7 +64,7 @@ function startDownload() {
   downloads.style.display = "none";
 
   // Validate YouTube link
-  const isValid = link.includes("youtube.com/watch?v=") || link.includes("youtu.be/");
+  const isValid = link.includes("youtube.com/watch?v=") || link.includes("youtu.be/") || link.includes("youtube.com/shorts/");
 
   if (!isValid) {
     status.innerText = "❌ Please enter a valid YouTube link.";
@@ -79,14 +79,7 @@ function startDownload() {
   }, 1500);
 }
 
-// function scrollToDownload(){
-//     const section = document.getElementById("DownloadSection");
-//     section.scrollIntoView({behavior:"smooth", block:"center"});
-//     section.classList.add("highlight-DownlaodSection");
-//     setTimeout(() =>{
-//         section.classList.remove("highlight-DownloadSecton");
-//     },1000);
-// }
+
 
 // Add shine effect to contact icons after scrolling to ContactMe
 function shineContactIcons() {
