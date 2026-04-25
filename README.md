@@ -1,23 +1,63 @@
 # YouDownloader
-Hey there! This is a frontend website design for YouTube video download, a simple and user-friendly interface that allows you to download YouTube videos in multiple formats — including MP4 (360p, 720p, 1080p) and MP3 (Audio only).
 
-# Technologies Used
-1. HTML5
-2. CSS3
-3. JavaScript
+YouDownloader is a simple YouTube downloader web app with a separate frontend and backend. It lets users paste a YouTube link, fetch the video details, and download either MP4 video files in available qualities or MP3 audio only.
 
-# Tools
-1. Visual Studio Code
-2. FontAwesome
-3. Colorhunt.co
-4. Stack OverFlow
+## Features
 
-# Features
-1. Responsive Design (Mobile/tablet/desktop-friendly)
-2. Worked Only in YouTube Link 
-3. Hover Effect
-4. Contact page
-5. Comment on code for understanding 
+- Paste a valid YouTube video or Shorts link to load download options.
+- View available MP4 qualities returned by the backend.
+- Download audio as MP3.
+- See a recent downloads history stored in the browser.
+- Responsive interface with a guide modal and contact links.
 
-# Limitation 
-1. No backend or login system.
+## Tech Stack
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: Node.js, Express
+- Download tooling: youtube-dl-exec, ffmpeg-static
+- UI extras: Font Awesome
+
+## Project Structure
+
+- Frontend/ - Main user interface
+- Backend/ - Express API server
+- Asset/ - Images and logo files
+
+## Setup
+
+### 1. Install dependencies
+
+Open a terminal in the project folder and install backend dependencies:
+
+```bash
+cd Backend
+npm install
+```
+
+### 2. Start the backend
+
+Run the API server on port 3000:
+
+```bash
+node server.js
+```
+
+### 3. Open the frontend
+
+Open Frontend/index.html in your browser, or serve the Frontend/ folder with your preferred local server.
+
+## API Endpoints
+
+- GET /api/info?url=... - Fetch video metadata and available MP4 qualities.
+- GET /api/download/video?url=...&quality=720p - Download a video in the selected quality.
+- GET /api/download/audio?url=... - Download audio as MP3.
+
+## Notes
+
+- The app expects valid YouTube links.
+- Download availability depends on the source video and YouTube restrictions.
+- The frontend uses http://localhost:3000 for API requests, so the backend must be running before downloads will work.
+
+## Contact
+
+Created by Bhavesh Karki.
