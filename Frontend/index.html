@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="../Asset/YT_DOWNLOAD-LOGO.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Downloader</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="../Asset/YT_DOWNLOAD-LOGO.png" alt="Logo"
+        style="height: 30px; vertical-align: middle; margin-right: 10px;">YT Downloader
+    </div>
+    <nav id="navId">
+      <div class="nav-links">
+        <a href="#Guide" onclick="openmodal()">Guide</a>
+        <a href="#DownloadSection"
+          onclick="document.getElementById('DownloadSection').scrollIntoView({behavior:'smooth'});">Download</a>
+        <a href="#ContactMe"
+          onclick="document.getElementById('ContactMe').scrollIntoView({behavior:'smooth'});">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closemodal()">&times;</span>
+      <h2>How to Use YT Downloader</h2>
+      <hr>
+      <br>
+      <div>
+        <h2>Step 1: Copy Video Link</h2>
+        <br>
+        <p>Go to YouTube and find the video you want to download. Copy the URL from your browser's address bar or by
+          clicking the "Share" button.</p>
+        <br>
+        <h2>Step 2: Paste the Link</h2>
+        <br>
+        <p>Return to YT Downloader and paste the copied link into the search box on the main page. Click the "Download"
+          button.</p>
+        <br>
+        <h2>Step 3: Choose Format</h2>
+        <br>
+        <p>Our system will process the video and provide you with multiple download options. Select your desired video
+          quality (e.g., 1080p, 720p) or choose the Audio Only (MP3) option.</p>
+        <br>
+        <h2>Step 4: Save & Enjoy</h2>
+        <br>
+        <p>Your download will start automatically. You can always check your previous downloads in the "Recent
+          Downloads" section below the buttons.</p>
+      </div>
+    </div>
+  </div>
+  <section id="Services">
+    <div class="container">
+      <h1>Welcome To YouTube Video Downloader</h1>
+      <div class="typing-container">
+        <span id="typing"></span>
+      </div>
+      <section id="DownloadSection">
+        <div class="input-box">
+          <input type="text" id="ytLink" placeholder="https://www.youtube.com/watch?v=..." />
+          <button onclick="startDownload()">Download</button>
+        </div>
+
+        <div class="status" id="statusMsg"></div>
+
+        <div class="downloads" id="downloadOptions">
+        </div>
+
+        <div id="historySection"
+          style="margin-top: 50px; display: none; width: 100%; max-width: 600px; margin-left: auto; margin-right: auto; text-align: left; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); box-sizing: border-box;">
+          <h3 style="color: #4b3b73; border-bottom: 2px solid #d4b5ff; padding-bottom: 10px; margin-bottom: 15px;">
+            Recent Downloads</h3>
+          <ul id="historyList" style="list-style-type: none; padding: 0; margin: 0;">
+          </ul>
+        </div>
+    </div>
+  </section>
+  <footer>
+    <section id="Contact">
+      <p>&copy; Thank you for Checking <img src="../Asset/YT_DOWNLOAD-LOGO.png" width="32px"
+          style="vertical-align: middle;">
+      </p><br>
+      <section id="ContactMe">
+        <a class="ICON" href="https://github.com/Bhavesh-Karki"><i class="fa-brands fa-github"></i></a>
+        <a class="ICON" href="https://www.linkedin.com/in/bhavesh-karki-b521a8370/"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a class="ICON" href="https://www.instagram.com/bhavesh_karki_/"><i class="fa-brands fa-instagram"></i></a>
+        <a class="ICON" href="mailto:codebybhavesh@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      </section>
+    </section>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
