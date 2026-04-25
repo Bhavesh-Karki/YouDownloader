@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" type="x-icon" href="YT_DOWNLOAD-LOGO.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Downloader</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">YT Downloader</div>
+    <nav id="navId">
+      <div class="nav-links">
+        <a href="#About" onclick="openmodal()">About</a>
+        <a href="#DownloadSection"
+          onclick="document.getElementById('DownloadSection').scrollIntoView({behavior:'smooth'});">Download</a>
+        <a href="#ContactMe"
+          onclick="document.getElementById('ContactMe').scrollIntoView({behavior:'smooth'});">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closemodal()">&times;</span>
+      <h2>YT Downloader</h2>
+      <hr>
+      <br>
+      <div>
+        <h2>Description</h2>
+        <br>
+        <p>This tool allows you to download YouTube videos easily in multiple formats, including HD video and MP3 audio.
+        </p>
+        <p>Simple, clean, and made for your convenience.</p>
+        <br>
+        <p><b>Language:</b> HTML5, CSS3, JavaScript </p>
+        <br>
+        <p><b>Tool:</b> Visual Studio Editor</p>
+        <br>
+        <p><b>Responsive:</b> Yes</p>
+        <br>
+        <h2>About Developer</h2>
+        <hr>
+        <br>
+        <p>Hey there! I'm Bhavesh A Developer and Computer Applications student.
+          I enjoy crafting clean, responsive, and interactive user interfaces.</p>
+        <p>Feel free to check out my other projects too!</p>
+        <br>
+        <h2>Links</h2>
+        <hr>
+        <br>
+        <a href="https://github.com/Bhavesh-Karki/FlexNFitness" class="LinkStyle">FlexNFitNess</a>
+        <br>
+        <a href="https://github.com/Bhavesh-Karki/YouDownloader" class="LinkStyle">YouDownloader</a>
+      </div>
+    </div>
+  </div>
+  <section id="Services">
+    <div class="container">
+      <h1>Welcome To YouTube Video Downloader</h1>
+      <div class="typing-container">
+        <span id="typing"></span>
+      </div>
+      <section id="DownloadSection">
+        <div class="input-box">
+          <input type="text" id="ytLink" style="width: 300px;" placeholder="https://www.youtube.com/watch?v=..." />
+          <button onclick="startDownload()">Download</button>
+        </div>
+
+        <div class="status" id="statusMsg"></div>
+
+        <div class="downloads" id="downloadOptions">
+          <a href="#">Download MP4 (340p)</a>
+          <a href="#">Download MP4 (720p)</a>
+          <a href="#">Download MP4 (1080p)</a>
+          <a href="#">Download MP3 (Audio Only)</a>
+        </div>
+    </div>
+  </section>
+  <footer>
+    <section id="Contact">
+      <p>&copy; Thank you for Checking <img src="YT_DOWNLOAD-LOGO.png" width="32px" style="vertical-align: middle;">
+      </p><br>
+      <section id="ContactMe">
+        <a class="ICON" href="https://github.com/Bhavesh-Karki"><i class="fa-brands fa-github"></i></a>
+        <a class="ICON" href="https://www.linkedin.com/in/bhavesh-karki-b521a8370/"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a class="ICON" href="https://www.instagram.com/bhavesh_karki_/"><i class="fa-brands fa-instagram"></i></a>
+        <a class="ICON" href="mailto:codebybhavesh@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+      </section>
+    </section>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
+</html>
