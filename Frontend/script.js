@@ -55,55 +55,55 @@ function erase() {
 type();
 
 // History Management
-document.addEventListener('DOMContentLoaded', loadHistory);
+// document.addEventListener('DOMContentLoaded', loadHistory);
 
-function loadHistory() {
-  const history = JSON.parse(localStorage.getItem('ytHistory')) || [];
-  const historySection = document.getElementById('historySection');
-  const historyList = document.getElementById('historyList');
+// function loadHistory() {
+//   const history = JSON.parse(localStorage.getItem('ytHistory')) || [];
+//   const historySection = document.getElementById('historySection');
+//   const historyList = document.getElementById('historyList');
   
-  if (history.length === 0) {
-    historySection.style.display = 'none';
-    return;
-  }
+//   if (history.length === 0) {
+//     historySection.style.display = 'none';
+//     return;
+//   }
   
-  historySection.style.display = 'block';
-  historyList.innerHTML = '';
+//   historySection.style.display = 'block';
+//   historyList.innerHTML = '';
   
-  // Show up to 10 recent downloads
-  history.slice(0, 10).forEach(item => {
-    const li = document.createElement('li');
-    li.style.padding = '10px 0';
-    li.style.borderBottom = '1px solid #eee';
-    li.style.display = 'flex';
-    li.style.justifyContent = 'space-between';
-    li.style.alignItems = 'center';
-    li.style.color = '#333';
-    li.style.fontSize = '15px';
+//   // Show up to 10 recent downloads
+//   history.slice(0, 10).forEach(item => {
+//     const li = document.createElement('li');
+//     li.style.padding = '10px 0';
+//     li.style.borderBottom = '1px solid #eee';
+//     li.style.display = 'flex';
+//     li.style.justifyContent = 'space-between';
+//     li.style.alignItems = 'center';
+//     li.style.color = '#333';
+//     li.style.fontSize = '15px';
     
-    li.innerHTML = `
-      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%;" title="${item.title}">${item.title}</span>
-      <span style="font-size: 0.85em; background: #e9e0f5; color: #4b3b73; padding: 4px 10px; border-radius: 20px; font-weight: bold;">${item.quality}</span>
-    `;
-    historyList.appendChild(li);
-  });
-}
+//     li.innerHTML = `
+//       <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 70%;" title="${item.title}">${item.title}</span>
+//       <span style="font-size: 0.85em; background: #e9e0f5; color: #4b3b73; padding: 4px 10px; border-radius: 20px; font-weight: bold;">${item.quality}</span>
+//     `;
+//     historyList.appendChild(li);
+//   });
+// }
 
-function saveToHistory(title, quality) {
-  let history = JSON.parse(localStorage.getItem('ytHistory')) || [];
+// function saveToHistory(title, quality) {
+//   let history = JSON.parse(localStorage.getItem('ytHistory')) || [];
   
-  // Remove duplicate if it exists to push it to the top
-  history = history.filter(h => !(h.title === title && h.quality === quality));
+//   // Remove duplicate if it exists to push it to the top
+//   history = history.filter(h => !(h.title === title && h.quality === quality));
   
-  history.unshift({ title, quality, date: new Date().toISOString() });
+//   history.unshift({ title, quality, date: new Date().toISOString() });
   
-  // Keep max 20 items
-  history = history.slice(0, 20);
-  localStorage.setItem('ytHistory', JSON.stringify(history));
+//   // Keep max 20 items
+//   history = history.slice(0, 20);
+//   localStorage.setItem('ytHistory', JSON.stringify(history));
   
-  // Re-render
-  loadHistory();
-}
+//   // Re-render
+//   loadHistory();
+// }
 
 async function startDownload() {
   const link = document.getElementById('ytLink').value.trim();
