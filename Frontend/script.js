@@ -139,7 +139,7 @@ async function startDownload() {
         data.qualities.forEach(quality => {
           const a = document.createElement('a');
           a.href = `http://localhost:3000/api/download/video?url=${encodeURIComponent(link)}&quality=${quality}`;
-          a.innerText = `Download MP4 (${quality})`;
+          a.innerHTML = `<i class="fa-regular fa-file-video"></i> Download MP4 (${quality})`;
           a.onclick = () => saveToHistory(data.title, `MP4 - ${quality}`);
           downloads.appendChild(a);
         });
@@ -148,7 +148,7 @@ async function startDownload() {
       // Add the MP3 Audio Only option at the end
       const audioLink = document.createElement('a');
       audioLink.href = `http://localhost:3000/api/download/audio?url=${encodeURIComponent(link)}`;
-      audioLink.innerText = `Download MP3 (Audio Only)`;
+      audioLink.innerHTML = `<i class="fa-regular fa-file-audio"></i> Download MP3 (Audio Only)`;
       audioLink.onclick = () => saveToHistory(data.title, `MP3`);
       downloads.appendChild(audioLink);
 

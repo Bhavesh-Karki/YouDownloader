@@ -196,6 +196,11 @@ hr {
     padding: 20px;
 }
 
+.container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
 .input-box {
     margin-top: 30px;
     margin-left: auto;
@@ -416,5 +421,10 @@ footer {
     .typing-container {
         font-size: 18px;
         text-align: center;
+        white-space: normal;
+    }
+
+    .container h1 {
+        font-size: 1.8rem;
     }
 }
