@@ -36,19 +36,34 @@ nav .nav-links {
 }
 
 nav a {
+    position: relative;
     color: white;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s ease, background 0.3s, border-radius 0.3s;
-    padding: 6px 16px;
-    border-radius: 6px;
+    transition: color 0.3s ease;
+    padding: 6px 0;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #d4b5ff;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
 }
 
 nav a:hover {
-    color: #2c233d;
-    background: #d4b5ff;
-    text-decoration: none;
-    border-radius: 12px;
+    color: #d4b5ff;
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 /* Modal base styles */
